@@ -5,8 +5,22 @@ const OrderModel = Model.Order;
 const MenuModel = Model.Menu;
 var sequelize = require('sequelize');
 
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('hospital.db');
+// const Sequelize = require('sequelize');
+// const sequelize = new Sequelize('db_pair', 'hendry', '123', {
+//     host: 'localhost',
+//     dialect: 'postgres',
+//     pool: {
+//         max: 5,
+//         min: 0,
+//         acquire: 30000,
+//         idle: 10000
+//     }
+// })
+
+// const db = require('pg')
+// const { Client } = require('pg')
+// const DB = new db()
+// DB.connect()
 
 
 class OrderController{
@@ -64,46 +78,14 @@ class OrderController{
             return data
         })
         .then(items => {
-            // console.log(items);
-            const favMenu= `
-                    SELECT  *
-                    FROM    Menus
-                    WHERE   id IN ?
-                `
-
-            db.serialize(function(){
-                db.all(favMenu, data, function(err) {
-                    if (err) console.log('Create table contact error');
-                    else console.log('Create table contact successfully');
-                });
-            })
-
+           return CustomerModel.findAll({
+                where: {
+                  id: items
+                }
+              });            
+        })
+        .then(data => {
             console.log(data);
-            
-//              MenuModel.findAll({
-//                 attributes: ['id', items.id]
-              
-//               .then(item=> {
-// console.log(item);
-
-//               })
-//             });
-//             // for (let i=0; i< items.length; i++) {
-//             //     console.log(MenuModel.findByPk(items[i]));
-                
-//             //     result.push(MenuModel.findByPk(items[i]));
-//             // }
-//             // console.log(result);
-            
-//             // items.forEach(item => {
-//             //     console.log(1, item);
-                
-//             //     const prod = MenuModel.findByPk(item);
-//             //      console.log(prod);
-                 
-//             // })
-
-            
             
         })
         
