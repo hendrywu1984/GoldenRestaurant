@@ -1,6 +1,6 @@
 const Model = require('../models');
 const CustomerModel = Model.Customer;
-const MembershipModel = Model.Customer;
+const MembershipModel = Model.Membership;
 
 class CustomerController{
     static getAdd(req, res){
@@ -13,11 +13,7 @@ class CustomerController{
                         })
     }
 
-    // static getMembership(req,res){
-    //     MembershipModel.findAll()
-    //         .then(data => res.render('', {data}))
-    //         .catch(err => console.log(err))
-    // }
+    
 
     static postAdd(req, res){
         CustomerModel.create(req.body)
