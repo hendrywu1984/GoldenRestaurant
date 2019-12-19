@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Mie Goreng",
+        "price": 30000,
+        "description": "Mi goreng terbuat dari mi kuning yang digoreng dengan sedikit minyak goreng, dan ditambahkan bawang putih, bawang merah, serta daging ayam atau daging sapi, irisan bakso, cabai, sayuran, tomat, telur ayam, dan acar."
+    },{
+        "name": "Mie Goreng Sea Food",
+        "price": 35000,
+        "description": "Mi goreng terbuat dari mi kuning yang digoreng dengan sedikit minyak goreng, dan ditambahkan bawang putih, bawang merah, udang serta daging ayam atau daging sapi, irisan bakso, cabai, sayuran, tomat, telur ayam, dan acar."
+    }
+]
