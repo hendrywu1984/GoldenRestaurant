@@ -17,11 +17,11 @@ class MenuController{
             .catch(err => console.log(err))
     }
 
-    static getMenuAll(req, res) {
-        MenuModel.findAll()
-          // .then(data => res.render('', { data }))
-          .catch(err => console.log(err))
-    }
+    // static getMenuAll(req, res) {
+    //     MenuModel.findAll()
+    //       // .then(data => res.render('', { data }))
+    //       .catch(err => console.log(err))
+    // }
 }
 
 module.exports = MenuController;
